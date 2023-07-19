@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>InFarmo-Rice Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="seed.png" rel="icon">
+
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+background:url("back.jpg");
+margin:2px 2px 2px 2px;
+border:3px solid black;
+width:100%;
+height:100%;
+
+}
+.topnav-right {
+  float: right;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: Blue;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+.navbar {
+  overflow: hidden;
+border:3px solid black;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+     footer {
+       padding:0px 0px 0px 0px;
+        background: #666;
+        color: black;
+border:3px solid black;
+clear:both;
+overflow:hidden;
+height:100px;
+width:100%;
+text-align:left;
+background-color:none;
+font-family:arial,helvetica;
+font-size:20px;
+
+ }
+
+header{
+float:center;
+width:50%;
+height:100px;
+padding:10px 10px 10px 10px;
+text-align:center;
+border-radius:50%;
+}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 0px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 0px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: hidden;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 100%px) {
+  .text {font-size: 11px}
+}
+.slideshow-container .border_box {
+  position: absolute;
+  border: 20px solid white;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+.col{
+width:100%
+}
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 1;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+border-radius:50%;
+margin: 45px 10px 0px 20px;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+border-radius:50%;
+margin:45px 10px 0px 20px;
+}
+.insta {
+  background-color: #E1306C;
+  color: white;
+border-radius:50%;
+margin:45px 50px 0px 20px;
+}
+.tab{
+margin-left:3px;
+}
+
+.column1 {
+  float: left;
+  width: 33%,67%;
+  padding: 10px;
+text-align: center;
+column-gap:10%;
+column-count:2;
+}
+.column2 {
+  float: left;
+  width: 67%,33%;
+  padding: 10px;
+text-align: center;
+column-gap:10%;
+column-count:2;
+}
+.column3 {
+  float: left;
+  width: 33%,67%;
+  padding: 10px;
+text-align: center;
+column-gap:10%;
+column-count:2;
+}
+.column4 {
+  float: left;
+  width: 67%,33%;
+  padding: 10px;
+text-align: center;
+column-gap:10%;
+column-count:2;
+}
+</style>
+
+</head>
+<body>
+<center>
+ <header>
+<h1 align="center" style="font-size:60px; color:black">
+<img src="seed.png" height="53px" width="53px">
+InFarmo</h1>
+</header>
+ </center><br><br>
+<div class="navbar">
+
+
+<a href="InFarmo.html" style="font-size:20px; color:black">Home</a>
+ 
+<div class="dropdown">
+<button class="dropbtn" style="font-size:20px; color:black">InFarmo
+<i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+<a href="subsistence.html">Subsistence Agriculture</a>
+<a href="shifting.html">Shifting Agriculture</a>
+<a href="plantation.html">Plantation Agriculture</a>
+<a href="dry.html">Dry InFarmo</a>
+<a href="mixed.html">Mixed and Multiple InFarmo</a>
+<a href="crop.html">Crop Rotation</a>
+</div>
+</div>
+
+
+<div class="dropdown">
+<button class="dropbtn" style="font-size:20px; color:black">Products
+<i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+<a href="rice.html">Rice</a>
+<a href="cotton.html">Cotton</a>
+</div>
+</div> 
+<a href="Ecommerce.html" style="font-size:20px; color:black">Buy now</a> 
+<div class="topnav-right">
+    <a href="login.html">Sign Out</a>
+  </div>
+</div></h2>
+</div></h2>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Up</button>
+<h1 align="center">TRANSPLANTED PUDDLED LOWLAND RICE</h1>
+
+<h2>Seed treatment</h2>
+<center>
+<img src="see.jpg" height="260px" width="450px" style="border:5px solid white;margin:10px 10px 10px 10px" >
+</center>
+<p>Treat the seeds in Carbendazim or Pyroquilon or Tricyclozole solution at 2 g/l of water for 1 kg of seeds. Soak the seeds in water for 10 hrs and drain excess water.</p>
+
+<p>This wet seed treatment gives protection to the seedlings up to 40 days from seedling disease such as blast and this method is better than dry seed treatment.</p>
+
+<p>If the seeds are required for sowing immediately, keep the soaked seed in gunny in dark and cover with extra gunnies and leave for 24hrs for sprouting.</p>
+
+<p>Seed treatment with Pseudomonas fluorescens: Treat the seeds with talc based formulation of Pseudomonas fluorescens 10g/kg of seed and soak in 1lit of water overnight. Decant the excess water and allow the seeds to sprout for 24hrs and then sow.</p>
+
+<h3>Seed treatment with biofertilizers :</h3>
+<center>
+<img src="swb.jpg" height="260px" width="450px" style="border:5px solid white;margin:10px 10px 10px 10px" >
+</center>
+<p> Five packets (1kg/ha) each of Azospirillum and Phosphobacteria or five packets (1kg/ha) of Azophos bioinoculants are mixed with sufficient water wherein the seeds are soaked overnight before sowing in the nursery bed (The bacterial suspension after decanting may be poured over the nursery area itself).</p>
+Biocontrol agents are compatible with biofertilizers.<br>
+Biofertilizers and biocontrol agents can be mixed together for seed soaking.<br>
+Fungicides and biocontrol agents are incompatible.<br>
+Nutrient management<br>
+
+Apply 1 tonne of fully decomposed FYM or compost to 20 cents nursery and spread the manure uniformly on dry soil.<br>
+
+Basal application of DAP is recommended when the seedlings are to be pulled out in 20-25 days after sowing in less fertile nursery soils.<br>
+
+For that situation, before the last puddling, apply 40 kg of DAP and if not readily available, apply straight fertilizers 16 kg of urea and 120 kg of super phosphate.<br>
+
+<p>If seedlings are to be pulled out after 25 days, application of DAP is to be done 10 days prior to pulling out.</p>
+
+<p>For clayey soils where root snapping is a problem, 4 kg of gypsum and 1 kg of DAP/cent can be applied at 10 days after sowing.</p>
+
+<h2>Main field</h2>
+
+<h3>Nutrient management</h3> 
+
+<h3>Application of organic manures</h3>
+
+<p>Apply 12.5 t of FYM or compost or green leaf manure @ 6.25 t/ha.</p>
+
+<p>If green manure is raised @ 50 kg seeds/ha in situ, incorporate it to a depth of 15 cm using a green manure trampler or tractor.</p>
+
+<p>In the place of green manure, press-mud / composted coir-pith can also be used.</p>
+
+
+<h3>Stubble incorporation</h3>
+
+
+<p>Apply 10 kg N/ha (22 kg urea) at the time of first puddling while incorporating the stubbles of previous crop to compensate immobilization of N by the stubbles.</p>
+
+<p>This may be done at least 10 days prior to planting of subsequent crop. This recommendation is more suitable for double crop wetlands, wherein, the second crop is transplanted in succession with short turn around period.</p>
+
+<h3>Biofertilizer application</h3>
+
+<p>Broadcast 10 kg of soil based powdered BGA flakes at 10 DAT for the dry season crop. Maintain a thin film of water for multiplication.</p>
+
+<p>Raise Azolla as a dual crop by inoculating 250 kg/ha 3 to 5 DAT and then incorporate during weeding for the wet season crop.</p>
+
+<p>Mix 10 packets ( 2 kg/ha ) each of Azospirillum and Phosphobacteria or 10 packets (2 kg/ha) of Azophos inoculants with 25 kg FYM and 25 kg of soil and broadcast the mixture uniformly in the main field before transplanting and</p>
+
+<p>Pseudomonas fluorescens (Pf 1) at 2.5 kg/ha mixed with 50 kg FYM and 25 kg of soil andbroadcast the mixture uniformly before transplanting.</p>
+
+ 
+
+<h3>Application of inorganic fertilizers</h3>
+
+<p>Apply fertilizer nutrients as per STCR-IPNS recommendations for desired yield target (Appendix I) (or)</p>
+<p>N dose may be through Leaf Color Chart (LCC)*</p>
+<p>P & K may be through Site Specific Nutrition Management by Omission plot technique**</p>
+<p>* For Ponni, N should be applied in three splits at AT, PI and H stages** in addition to GLM or FYM application.</p>
+
+<h3>* N management through LCC</h3>
+
+<p>Time of application is decided by LCC score</p>
+
+<p>Take observations from 14 DAT in transplanted rice or 21 DAS in direct seeded rice. Repeat the observations at weekly intervals up to heading</p>
+
+<p>Observe the leaf colour in the fully opened third leaf from the top as index leaf. Match the leaf color with the colours in the chart during morning hours (8-10 am). Take observation in 10 places.</p>
+
+<p>LCC critical value is 3.0 in low N response cultures like White Ponni and 4.0 in other cultivars and hybrids</p>
+
+<p>When 6/10 observations show less than the critical colour value, N can be applied as per the following recommendation : Application of 25 kg N ha-1 (1 bag urea) at 7 DAT followed by N @ 40 kg ha-1 each time for kuruvai/ short duration rice / 30 kg ha-1 each time for medium & long duration rice as and when the leaf colour value falls below the critical value of 4 for varieties and hybrids and critical value of 3 for white ponni, monitored from 14 DAT.</p>
+
+<p>For aged seedlings : Basal application of 35 kg N per ha is recommended to avoid yield loss when seedlings aged 35 - 45 days are used for transplanting and the LCC based N management can be followed from 14 DAT.</p>
+
+<h3>Split application of N and K</h3>
+
+<p>Apply N and K in four equal splits viz., basal, tillering, panicle initiation and heading stages. Tillering and Panicle initiation periods are crucial and should not be reduced with the recommended quantity.</p>
+<p>N management through LCC may be adopted wherever chart is available</p>
+<h3>Application of P fertilizer</h3>
+
+<p>P may be applied as basal and incorporated.</p>
+<p>When the green manure is applied, rock phosphate can be used as a cheap source of P fertilizer. If rock phosphate is applied, the succeeding rice crop need not be supplied with P. Application of rock phosphate + single super phosphate or DAP mixed in different proportions (75:25 or 50:50) is equally effective as SSP or DAP alone.</p>
+<h3>Application of zinc sulphate</h3>
+
+<p>Apply 25 kg of zinc sulphate/ha mixed with 50 kg dry sand or apply 25 kg of TNAU Wetland rice MN mixture/ha enriched in FYM at 1:10 ratio incubated for 30 days at friable moisture, just before transplanting.</p>
+<p>It is enough to apply 12.5 kg zinc sulphate /ha, if green manure (6.25 t/ha) or enriched FYM, is applied.</p>
+<p>If deficiency symptom appears in the standing crop, foliar application of 0.5% zinc sulphate + 1.0% urea can be given at 15 days interval until the Zn deficiency symptoms disappear.</p>
+<h3>Application of gypsum</h3>
+
+<p>Apply 500 kg of gypsum/ha (as source of Ca and S nutrients) at last ploughing.</p>
+
+<h3>Foliar nutrition</h3>
+
+<p>Foliar spray of 1% urea + 2% DAP + 1% KCl at Panicle Initiation (PI) and 10 days later for all varieties.</p>
+
+<h3>Neem treated urea and coal-tar treated urea</h3>
+
+<p>Blend the urea with crushed neem seed or neem cake 20% by weight. Powder neem cake to pass through 2mm sieve before mixing with urea. Keep it overnight before use (or) urea can be mixed with gypsum in 1:3 ratios, or urea can be mixed with gypsum and neem cake at 5:4:1 ratio to increase the nitrogen use efficiency. For treating 100 kg urea, take one kg coal-tar and 1.5 litres of kerosene. Melt coal-tar over a low flame and dissolve it in kerosene. Mix urea with the solution thoroughly in a plastic container, using a stick. Allow it to dry in shade on a polythene sheet. This can be stored for a month and applied basally.</p>
+
+<h3>N management through LCC</h3>
+
+<h3>For sodic soil</h3>
+
+<p>In the case of sodic soils, LCC critical value is 4.0 for varieties and 5.0 for the hybrids.</p>
+
+<h3>Other special cultural practices (Contingent Plan)</h3>
+
+<p>Application of Pink Pigmented Facultative Methylotroph (Methylobacterium sp.) as seed treatment (@ 200 g / 10 kg seeds), soil application (@ 2 kg / ha) and foliar spray (@ 500 ml / ha) at panicle initiation and flag leaf stages for alleviation of water stress effects in both SRI and transplanted system of rice cultivation.</p>
+
+<h2>TRANSPLANTED HYBRID RICE</h2>
+<center>
+<img src="hyb.jpg" height="260px" width="450px" style="border:5px solid white;margin:10px 10px 10px 10px" >
+</center>
+<p>Fertilizer
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+175:60:60 kg N, P2O5 and K2O/ha</p>
+
+<h4>Other nutrient management practices: </h4><p>same as in transplanted rice variety</p>
+<h2>Main field</h2>
+
+<h3>Nutrient management</h3>
+
+As per transplanted rice.<br>
+Use of LCC has more advantage in N management.<br>
+
+Green manure and farm yard manure application will enhance the growth and yield of rice in this system approach.<br>
+
+Under sodic soils, during rotary weeding, apply Azophosmet @ 2.2 kg/ha and PPFM as foliar spray @ 500 ml/ha<br>
+
+
+<h2>WET SEEDED PUDDLED LOWLAND RICE</h2>
+
+<h3>Manures and fertilizer application</h3>
+
+<p>For direct wet seeded lowland rice, the recommendation is same at that of transplanted rice. Apply N and K as 25% each at 21 DAS, at active tillering, PI and heading stages.</p>
+
+<p>If N applied through LCC, use the critical value 4 for line sown drill seeded rice.</p>
+
+<p>Entire P as basal applied in the last plough or at the time of incorporation of green manure/ compost.</p>
+
+<p>Biofertilizers as recommended to transplanted rice may be followed wherever feasible and moisture available.</p>
+
+<p>Micro nutrient, foliar application and biofertlizers as recommended to transplanted rice.</p>
+
+ <h2>RICE SEED PRODUCTION</h2>
+<center>
+<img src="ric.jpg" height="260px" width="450px" style="border:5px solid white;margin:10px 10px 10px 10px" >
+</center>
+
+<h3>Blanket fertilizer recommendation</h3>
+
+<p>Short duration
+
+: NPK @ 120:40:40 kg ha-1</p>
+
+<p>Medium duration
+
+: NPK @ 150:50:60 kg ha-1</p>
+
+<p>Long duration
+
+: NPK @ 150:50:80 kg ha-1</p>
+
+<h3>Zinc deficient soils</h3>
+
+<p>Apply ZnSO4 @ 25 kg ha-1</p>
+
+<h3>Foliar application</h3>
+
+<p>DAP 2% or 0.5% NutriGold (organic growth promotor) at boot leaf stage and at 5-10% flowering.</p>
+<p>Spray with 3% cowpea sprout extract at vegetative and flowering stage.</p>
+<h3>Hybrid seed production Techniques (ADTRH 1 and CORH 2)</h3>
+
+<h3>Fertilizer application</h3>
+
+<p>150 : 60 : 60 kg NPK / ha. N and K applied in 3 split doses viz., basal, active tillering and panicle initiation.</p>
+
+<h3>Foliar spray</h3>
+
+<p>Spray DAP 2% at boot leaf stage and at 5-10% flowering (or)</p>
+<p>Spray 0.5% NutriGold (organic growth promoter) at boot leaf stage and at 5-10% flowering (or)</p>
+<p>Spray 3 % cowpea sprout extract at boot leaf stage and at 5-10% flowering.</p>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<footer>
+
+
+      <div class="col">
+<a href="Facebook.html" class="insta btn" style="float:right">
+          <i class="fa fa-instagram fa-fw"></i> 
+         </a>
+       </pre>
+        <a href="Twitter.html" class="twitter btn" style="float:right">
+          <i class="fa fa-twitter fa-fw"></i>
+        </a>
+        <a href="Facebook.html" class="fb btn" style="float:right">
+          <i class="fa fa-facebook fa-fw"></i> 
+         </a>
+ <br>&nbsp&nbsp&nbspCopyright&#169; InFarmo-All rights reserved <p align="right"> Follow us on : </p>      
+      </div>
+
+</footer>
+
+</body>
+</html>
